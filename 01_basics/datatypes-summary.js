@@ -44,3 +44,31 @@ console.log(typeof heros); // object
 
 // Is javascript dynamically type or statically type language
 // It is a dynamically language.
+
+
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Stack (Primitive), Heap (Non-Primitive)
+
+let myYoutubename = "ganeshnavaledotcom"
+let anotherName = myYoutubename
+
+anotherName = "chaiaurcode"
+
+console.log(myYoutubename);
+console.log(anotherName);
+
+
+let userOne = {
+    email:"user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "ganesh@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
