@@ -72,4 +72,30 @@ console.log(users[1].email) //o/p: abc@gmail.com
 Loop karne ke baad ek value nikal rahe hai, to value nikalte time kya hota hai,
 Kai bar wo value exist nahi karti hai to crash hone ke chances hai so below code dekho    */
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn')); //o/p: true
+// console.log(tinderUser.hasOwnProperty('isLoggedIn')); //o/p: true
+
+
+
+const course = {
+    coursename : "js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+
+// const {courseInstructor} = course
+// console.log(courseInstructor);
+
+// const {courseInstructor:instructor} = course
+// console.log(instructor);
+
+/*In react  */
+// const navbar = ({company})=>{
+
+// }
+// navbar(company = "hitesh")
+
+ [
+    {},
+    {},
+    {}
+ ]
