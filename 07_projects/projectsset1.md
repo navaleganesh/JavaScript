@@ -5,7 +5,7 @@
 
 # Solution code
 
-## project 1
+## project 1 solution   
 
 ```javascript
 console.log("ganesh")
@@ -37,9 +37,10 @@ buttons.forEach((btn) => {
 
 
 
-## Project 2
+## Project 2 solution
 
 ```javascript
+
 const form = document.querySelector('form');
 //Below usecase will give you empty value
 // const height = parseInt(document.querySelector('#height').value);
@@ -67,4 +68,17 @@ form.addEventListener('submit', function (e) {
   }
 });
 
+```
+
+
+## Project 3 solution
+
+```javascript
+const clock = document.querySelector('#clock');
+
+setInterval(function () {
+  let date = new Date();
+  // console.log(date.toTimeString());
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
 ```
