@@ -7,44 +7,64 @@
     <title>Document</title>
 </head>
 
-<body style="background-color: #212121; color: #fff;">
-    0 UNSENT: Client has been created. open() not called yet.
+<body style="background-color: #212121; color: #fff; font-size: 30px;">
+    <!-- 0 UNSENT: Client has been created. open() not called yet.
     1 OPENED: open() has been called.
     2 HEADERS_RECEIVED: send() has been called, and headers and status are available.
     3 LOADING: Downloading; responseText holds partial data.
-    4 DONE: The operation is complete.
+    4 DONE: The operation is complete. -->
 
-
+    <div>
+        <ul>
+            <li>One</li>
+            <li class="hero">Two</li>
+            <li>Three</li>
+            <li class="hero">Four</li>
+            <li>Five</li>
+        </ul>
+    </div>
 
 
 
 </body>
 <script>
 
-
-
-    let createDiv = document.createElement('div');
-    createDiv.classList.add('outer')
+    let list = document.querySelectorAll('.hero');
+    console.log(list);
+    list.forEach((element)=>{
+        console.log(element.previousElementSibling.innerHTML);
+        
+    })
+   
+ 
     
-    document.querySelector('body').appendChild(createDiv)
+    
 
-    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
-    const xhr = new XMLHttpRequest() // 0 UNSENT
-    xhr.open('GET', requestUrl)   // 1 OPENED
-    xhr.onreadystatechange = function () {
-        console.log(xhr.readyState);
-        if (xhr.readyState === 4) {
-            const data = JSON.parse(this.responseText)
-            console.log(data.followers);
+    // let createDiv = document.createElement('div');
+    // createDiv.classList.add('outer')
+    
+    // document.querySelector('body').appendChild(createDiv)
 
-            createDiv.innerHTML = `
-                <img src="${data.avatar_url}" alt="Avtar">
-                <div>${data.name}</div>
-                <div>${data.bio}</div>
-            `
-        }
-    }
-    xhr.send() // 2 HEADERS_RECEIVED send()
+    // const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    // const xhr = new XMLHttpRequest() // 0 UNSENT
+    // xhr.open('GET', requestUrl)   // 1 OPENED
+    // xhr.onreadystatechange = function () {
+    //     console.log(xhr.readyState);
+    //     if (xhr.readyState === 4) {
+    //         const data = JSON.parse(this.responseText)
+    //         console.log(data.followers);
+
+    //         createDiv.innerHTML = `
+    //             <img src="${data.avatar_url}" alt="Avtar">
+    //             <div>${data.name}</div>
+    //             <div>${data.bio}</div>
+    //         `
+    //     }
+    // }
+    // xhr.send() // 2 HEADERS_RECEIVED send()
+
+
+
 </script>
 
 </html>
