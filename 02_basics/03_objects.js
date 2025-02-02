@@ -1,3 +1,6 @@
+/* Object - Change value, freeze value, access value & function, Add value & function, acces object value in the function  */
+
+
 // singleton (Koi bhi constructor banate ho to ek singleton create hota hai)
 // Object.create // Isye constructor method ke through bolte hai yahi signleton hai
 
@@ -8,25 +11,32 @@ const mySym = Symbol("key1")
 const JsUser = {
     name : "Ganesh",
     "full name": "Ganesh Navale",
-    [mySym]:"mykey1",
+    [mySym]:"mykey1", //Symbol
     age: 18,
     location:"Pune",
     email:"ganesh@gmail.com",
     isLoggedIn:false,
     lastLoginDays:["Monday","Saturday"]
 }
-//How to access object? Some person access like this
+
+//How to access value in Object
+
 // console.log(JsUser.email); //o/p: ganesh@gmail.com
 // console.log(JsUser["email"]); //o/p: ganesh@gmail.com
 // console.log(JsUser["full name"]); //o/p : Ganesh Navale
 // console.log(JsUser.location); //o/p : Pune
 // console.log(typeof JsUser.location); //o/p : string
-// console.log(JsUser[mySym]); //o/p : mykey1
+// console.log(JsUser[mySym]); //o/p : mykey1  --- Symbol access
 
 
+
+//How to change value in Object
 JsUser.email = "ganesh@chatgpt.com"
-// Object.freeze(JsUser) //freeze karna means object mai update nahi hota
-JsUser.email = "ganesh@microsoft.com" // Not update in below obj due to freeze
+
+//How to freeze value
+ Object.freeze(JsUser)
+JsUser.email = "ganesh@microsoft.com" // This value didn't change due to Object.freeze()
+
 // console.log(JsUser); 
 /* o/p:
 {
@@ -41,6 +51,9 @@ JsUser.email = "ganesh@microsoft.com" // Not update in below obj due to freeze
 }*/
 
 
+
+
+//How to access function
 JsUser.greeting = function(){
     console.log("Hello JS user");
 }
@@ -49,8 +62,7 @@ console.log(JsUser.greeting); // o/p: [Function (anonymous)] Function excute nah
 console.log(JsUser.greeting()); // o/p: Hello JS user
 
 
-/* Object ke under mai name ko reference kar na hai below code  */
-
+//Add function in the object & access the value from object using 'this' keyword
 JsUser.greetingTwo = function(){
     console.log(`Hello JS user, ${this.name}`);
 }
